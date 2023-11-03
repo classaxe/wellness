@@ -189,33 +189,48 @@ $root = new Dir(
 <head>
 <title>Wellness Living Live Coding Challenge</title>
 <style>
+    .answer {
+        display: inline-block;
+        border: 1px dashed #f00;
+        background: #fee;
+        padding: 0.5em;
+    }
     .scrollbox {
         border: 1px solid #000;
         padding: 1em;
+        margin: 0;
         height: 200px;
         overflow: auto;
+        background: #ffe;
     }
     .scrollbox pre {
         margin: 0;
         padding: 0;
     }
-    .code {
-        border: 1px solid #000;
-        background: #eee;
+    .scrollbox.code {
+        background: #efe;
+    }
+    h2 {
+        margin: 1.5em 0 0.5em;
+    }
+    footer {
+        margin: 1em;
+        text-align: center;
     }
 </style>
 </head>
 <body>
 <h1>Wellness Living Live Coding Challenge</h1>
 <h2>Most popular filesname:</h2>
-<strong><?php print $root->getPopular(); ?> (<?php print $root->getPopularCount(); ?> instances)</strong>
+<div class="answer"><strong><?php print $root->getPopular(); ?></strong> (<?php print $root->getPopularCount(); ?> instances)</div>
 <h2>Root folder contents:</h2>
 <div class="scrollbox">
     <?php print $root; ?>
 </div>
 <h2>Source Code:</h2>
-<div class="scrollbox">
+<div class="scrollbox code">
     <?php show_source('index.php'); ?>
 </div>
+<footer>&copy; <a href="mailto:martin@classaxe.com">Martin Francis</a>, Friday November 3rd, 2023</footer>
 </body>
 </html>
