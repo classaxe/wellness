@@ -187,13 +187,35 @@ $root = new Dir(
 ?>
 <html>
 <head>
-    <title>Wellness Living Live Coding Challenge</title>
+<title>Wellness Living Live Coding Challenge</title>
+<style>
+    .scrollbox {
+        border: 1px solid #000;
+        padding: 1em;
+        height: 200px;
+        overflow: auto;
+    }
+    .scrollbox pre {
+        margin: 0;
+        padding: 0;
+    }
+    .code {
+        border: 1px solid #000;
+        background: #eee;
+    }
+</style>
 </head>
 <body>
 <h1>Wellness Living Live Coding Challenge</h1>
-<p>Most popular filesname:</p>
+<h2>Most popular filesname:</h2>
 <strong><?php print $root->getPopular(); ?> (<?php print $root->getPopularCount(); ?> instances)</strong>
-<p>Root folder contents:</p>
-<?php print $root; ?>
+<h2>Root folder contents:</h2>
+<div class="scrollbox">
+    <?php print $root; ?>
+</div>
+<h2>Source Code:</h2>
+<div class="scrollbox">
+    <?php show_source('index.php'); ?>
+</div>
 </body>
 </html>
